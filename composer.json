@@ -1,0 +1,36 @@
+{
+    "name": "kamiorz/lumen-swoole",
+    "type": "library",
+    "description": "lumen-swoole can help you work with lumen and swoole.",
+    "keywords": ["lumen", "swoole", "performance", "framework"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "XiaoGai",
+            "email": "68152283@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "ext-swoole" : "1.8.*",
+        "laravel/lumen-framework":">=5.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "laravel/lumen": "5.2.*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "KamiOrz\\LumenSwoole\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "bin": [
+        "bin/lumen-swoole"
+    ]
+}
