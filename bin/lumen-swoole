@@ -27,4 +27,4 @@ if (!defined('COMPOSER_INSTALL')) {
 
 require COMPOSER_INSTALL;
 
-Encore\LumenSwoole\Command::main($argv);
+KamiOrz\LumenSwoole\Command::main($argv);
