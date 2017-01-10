@@ -263,6 +263,11 @@ class Server
      */
     public function onRequest($request, $response)
     {
+        // rawContent返回原始POST数据，此函数等同于PHP的fopen('php://input')
+        if(empty($request->post)) {
+            parse_str($request->rawContent(), $request->post);
+        }
+
         $this->buildGlobals($request);
 
         $obContents = '';
@@ -298,6 +303,8 @@ class Server
      */
     protected function buildGlobals($request)
     {
+        $_SERVER = $_GET = $_POST = $_COOKIE = $_FILES = [];
+        
         foreach ($request->server as $key => $value) {
             $_SERVER[strtoupper($key)] = $value;
         }
